@@ -1,0 +1,30 @@
+@model SchoolManagement.Models.Student
+
+<div class="container mt-4 text-light">
+    <h4>Thêm Học Sinh Mới</h4>
+    <hr />
+    <div class="row">
+        <div class="col-md-4">
+            <form asp-action="Create">
+                <div class="mb-3">
+                    <label class="form-label">Họ Tên</label>
+                    <input asp-for="FullName" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Mã SV</label>
+                    <input asp-for="StudentId" class="form-control" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Email</label>
+                    <input asp-for="Email" class="form-control" type="email" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-label">Trường Học</label>
+                    <select asp-for="SchoolId" class="form-control" asp-items="ViewBag.SchoolId"></select>
+                </div>
+                <button type="submit" class="btn btn-primary">Lưu Lại</button>
+                <a asp-action="Index" class="btn btn-secondary">Quay Lại</a>
+            </form>
+        </div>
+    </div>
+</div>
